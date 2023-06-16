@@ -1,4 +1,4 @@
-#Test Technique
+# Test Technique
 
 Voici mon code pour le test technique d'Expat.com
 
@@ -9,7 +9,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
     Node.js (version 18.16)
     Composer (version 2.2.6)
 
-##Installation
+## Installation
 
 Clonez ce dépôt sur votre machine locale :
 
@@ -37,7 +37,7 @@ Importez les fixtures une fois la base créé :
 
     `node fixtures.js`
 
-##Utilisation
+## Utilisation
 
 Accédez à l'application dans votre navigateur en utilisant l'URL http://localhost:80.<br />
 Un adminer a aussi été mis en place, en utilisant l'URL : http://localhost:8080.
