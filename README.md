@@ -1,4 +1,4 @@
-###Test Technique
+#Test Technique
 
 Voici mon code pour le test technique d'Expat.com
 
@@ -11,33 +11,33 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
 ##Installation
 
-    Clonez ce dépôt sur votre machine locale :
+Clonez ce dépôt sur votre machine locale :
 
-`git clone git@github.com:ThePrimesBros/test-technique-expat.com.git`
+    `git clone git@github.com:ThePrimesBros/test-technique-expat.com.git`
 
 Accédez au répertoire du projet :
 
 Installez les dépendances PHP en utilisant Composer :
 
-`composer install`
+    `composer install`
 
 Installez les dépendances JavaScript en utilisant npm :
 
-`npm install`
+    `npm install`
 
 Démarrez le projet :
 
-`docker compose up -d --build`
+    `docker compose up -d --build`
 
-    Importez la base de données une fois le docker lancé :
+Importez la base de données une fois le docker lancé :
 
-`node migrations.js`
+    `node migrations.js`
 
-    Importez les fixtures une fois la base créé :
+Importez les fixtures une fois la base créé :
 
-`node fixtures.js`
+    `node fixtures.js`
 
 ##Utilisation
 
-Accédez à l'application dans votre navigateur en utilisant l'URL http://localhost:80.
+Accédez à l'application dans votre navigateur en utilisant l'URL http://localhost:80.<br />
 Un adminer a aussi été mis en place, en utilisant l'URL : http://localhost:8080.
