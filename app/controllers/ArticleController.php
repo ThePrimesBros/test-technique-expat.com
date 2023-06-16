@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controllers;
+use App\Controllers\Controller;
+use App\Models\Article;
+use App\Models\Category;
+
 class ArticleController extends Controller
 {
     protected $articleModel;
@@ -13,12 +18,10 @@ class ArticleController extends Controller
     public function create()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Handle form submission
             $title = $_POST['title'];
             $content = $_POST['content'];
             $categoryId = $_POST['category_id'];
 
-            // Validate form fields
             $errors = [];
 
             if (empty($title)) {
@@ -29,38 +32,29 @@ class ArticleController extends Controller
                 $errors['content'] = 'Content is required';
             }
 
-            // ... Perform additional validation if needed
-
             if (!empty($errors)) {
                 http_response_code(400);
                 echo json_encode(['errors' => $errors]);
                 exit;
             }
 
-            // Create the article
             $articleId = $this->articleModel->createArticle($title, $content, $categoryId);
 
-            // Return the appropriate response
-            $response = [];
-
-            if ($categoryId) {
-                $response['categoryId'] = $categoryId;
+            if ($articleId) {
+                header("Location: /articles");
+                exit;
+            } else {
+                echo "An Error as occured.";
             }
-
-            http_response_code(200);
-            echo json_encode($response);
-            exit;
         } else {
-            // Display the create article form
             $categories = new Category();
-            $categoryList = $categories->getAllCategories();
+            $categoryList = $categories->getAllCategory();
 
             $data = [
                 'categories' => $categoryList
             ];
 
-            $content = $this->view->render('article/create', $data);
-            $this->view->render('layout', ['content' => $content]);
+            $this->view->render('create', $data);
         }
     }
 
@@ -68,12 +62,12 @@ class ArticleController extends Controller
     public function listAll()
     {
         $articles = $this->articleModel->getAllArticles();
-        $this->view->render('article/list', ['articles' => $articles]);
+        $this->view->render('list', ['articles' => $articles]);
     }
 
     public function listByCategory($categoryId)
     {
         $articles = $this->articleModel->getArticlesByCategory($categoryId);
-        $this->view->render('article/list', ['articles' => $articles]);
+        $this->view->render('list', ['articles' => $articles]);
     }
 }

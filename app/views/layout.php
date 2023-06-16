@@ -1,5 +1,3 @@
-<!-- views/layout.php -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +16,7 @@
     </header>
 
     <main>
-        <?= $content ?>
+
     </main>
 
     <footer>

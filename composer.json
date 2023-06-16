@@ -1,0 +1,16 @@
+{
+    "name": "raphael-taffe/test-technique-expat.com",
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "app/controllers",
+            "App\\Models\\": "app/models",
+            "App\\Views\\": "app/views"
+        }
+    },    
+    "authors": [
+        {
+            "name": "ThePrimesBros",
+            "email": "thesket5@outlook.fr"
+        }
+    ]
+}

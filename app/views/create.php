@@ -1,8 +1,6 @@
-<!-- views/create.php -->
-
 <h1>Create Article</h1>
 
-<form id="create-article-form" action="/article/create" method="POST" onsubmit="submitForm(event)">
+<form id="create-article-form" action="/article/create" method="POST">
     <div id="error-message"></div>
 
     <div>
@@ -18,7 +16,7 @@
     <div>
         <label for="category_id">Category:</label>
         <select id="category_id" name="category_id">
-            <option value="">None</option>
+            <option value="">Aucun</option>
             <?php foreach ($categories as $category): ?>
                 <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
             <?php endforeach; ?>

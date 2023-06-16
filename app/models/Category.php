@@ -1,24 +1,23 @@
 <?php
 
+namespace App\Models;
+use \PDO;
+
 class Category extends Model
 {
     public function createCategory($name)
     {
-        // Prepare and execute the INSERT statement
-        $stmt = $this->db->prepare("INSERT INTO categories (name) VALUES (?)");
+        $stmt = $this->db->prepare("INSERT INTO category (name) VALUES (?)");
         $stmt->execute([$name]);
 
         return $this->db->lastInsertId();
     }
 
-    public function getAllCategories()
+    public function getAllCategory()
     {
-        // Prepare and execute the SELECT statement
-        $stmt = $this->db->prepare("SELECT * FROM categories");
+        $stmt = $this->db->prepare("SELECT * FROM category");
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    // Add other methods for updating, deleting, and retrieving single categories as needed
 }

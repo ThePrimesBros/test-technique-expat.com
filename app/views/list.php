@@ -1,5 +1,3 @@
-<!-- views/list.php -->
-
 <h1>Articles</h1>
 
 <ul>

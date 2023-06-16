@@ -2,7 +2,8 @@
 
 return [
     'host' => 'localhost',
-    'database' => 'your_database_name',
-    'username' => 'your_username',
-    'password' => 'your_password',
+    'port' => 3306,
+    'database' => 'expat_test',
+    'username' => 'test',
+    'password' => 'test',
 ];
